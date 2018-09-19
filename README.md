@@ -1,4 +1,6 @@
 # image-map
+![image](https://i.imgur.com/Aj70s4b.jpg)
+
 
 ## Project setup
 ```
