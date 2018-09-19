@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <image-map
+        :value="value"
+        @input="zones => change({ zones })"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ImageMap from './components/ImageMap.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    ImageMap
+  },
+  data(){
+    return {
+      value:{
+        uuid: 3721,
+        source:'http://n.sinaimg.cn/news/transform/20170330/K2Gk-fycwymx2694027.jpg'
+      }
+    }
+  },
+  methods: {
+    change(changes) {
+      console.log( { ...this.value, ...changes });
+    },
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
